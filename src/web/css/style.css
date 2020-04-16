@@ -1,0 +1,35 @@
+* {
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    color: #212121;
+    font-family: Roboto, Arial, 'Open Sans', Lucida Sans Unicode, Calibri, Lucida Sans Unicode, Lucida Sans, Lucida Grande, Futura, Source Sans Pro, Helvetica, Arial, Liberation Sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+body {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.card {
+	width: 85%;
+	margin: auto;
+	position: relative;
+}
+
+h2 {
+	text-align: center;
+}
