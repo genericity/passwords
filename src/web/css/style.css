@@ -1,13 +1,13 @@
 * {
-    background-color: transparent;
-    border: none;
-    font-weight: 400;
-    color: #212121;
-    font-family: Roboto, Arial, 'Open Sans', Lucida Sans Unicode, Calibri, Lucida Sans Unicode, Lucida Sans, Lucida Grande, Futura, Source Sans Pro, Helvetica, Arial, Liberation Sans, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 24px;
-    text-decoration: none;
+	background-color: transparent;
+	border: none;
+	font-weight: 400;
+	color: #212121;
+	font-family: Roboto, Arial, 'Open Sans', Lucida Sans Unicode, Calibri, Lucida Sans Unicode, Lucida Sans, Lucida Grande, Futura, Source Sans Pro, Helvetica, Arial, Liberation Sans, sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 24px;
+	text-decoration: none;
 }
 
 html,
@@ -24,12 +24,75 @@ body {
 	flex-direction: column;
 }
 
-.card {
-	width: 85%;
-	margin: auto;
+/* Setup */
+
+#app_wrap {
+	background: #02101a;
+	height: 100%;
+	width: 100%;
 	position: relative;
+	clear: both;
 }
 
-h2 {
-	text-align: center;
+#app_wrap .card {
+	width: 65%;
+	margin: 24px 0 12px 12px;
+	position: relative;
+	background: #e5ecf0;
+	display: block;
+	float: right;
+	height: 680px;
+	-webkit-border-top-left-radius: 16px;
+	-webkit-border-bottom-left-radius: 16px;
+	-moz-border-radius-topleft: 16px;
+	-moz-border-radius-bottomleft: 16px;
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
+	padding: 16px;
+}
+
+
+/* Menu */
+
+#app_wrap nav {
+	float: left;
+	display: block;
+}
+
+#app_wrap nav ul li a {
+	display: block;
+	float: left;
+	padding: 12px;
+	color: #8eacbe;
+	font: 16px Work Sans, Roboto;
+	border-left: 3px solid transparent;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+#app_wrap nav a:hover, #app_wrap nav a.selected {
+	border-left: 3px solid #fb8c87;
+	color: #fb8c87;
+}
+
+/* Card*/
+
+#app_wrap .card h2 {
+	text-align: left;
+	font-family: 'Work Sans Semi-Bold', Roboto;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #0c1c28;
+	margin: 24px 0 12px 0;
+}
+
+#search_bar {
+	padding: 6px;
+	border: none;
+	background: #f9fbfc;
 }
