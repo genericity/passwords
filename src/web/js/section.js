@@ -2,6 +2,7 @@ class Section {
 	constructor(name, objects = []) {
 		this.name = name;
 		this.objects = objects;
+		this.element;
 	}
 
 	makeObject() {
@@ -19,6 +20,52 @@ class Section {
 			section.appendChild(obj.makeObject());
 		}
 
+		this.element = section;
+
 		return section;
+	}
+
+	getName() {
+		return this.name;
+	}
+
+	show() {
+		this.element.classList.add('visible');
+		this.element.classList.remove('hidden');
+	}
+
+	hide() {
+		this.element.classList.remove('visible');
+		this.element.classList.add('hidden');
+		for (let row of this.objects) {
+			row.hide();
+		}
+	}
+
+	showAll() {
+		for (let row of this.objects) {
+			row.show();
+		}
+	}
+
+	hideAll() {
+		for (let row of this.objects) {
+			row.hide();
+		}
+	}
+
+
+	searchFor(str) {
+		str = str.toLowerCase();
+		let hits = false;
+		for (let row of this.objects) {
+			if (row.getUsername(true).toLowerCase().includes(str)) {
+				hits = true;
+				row.show();
+			} else {
+				row.hide();
+			}
+		}
+		return hits;
 	}
 }

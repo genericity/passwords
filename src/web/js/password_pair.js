@@ -6,6 +6,7 @@ class PasswordPair {
 		};
 		this.username_obj;
 		this.password_obj;
+		this.element;
 	}
 
 	getUsername(decrypt = false) {
@@ -51,7 +52,9 @@ class PasswordPair {
 		let chevron_text = document.createTextNode("chevron_right");
 		further_actions.appendChild(chevron_text);
 		actions.appendChild(further_actions);
-		row.appendChild(actions)
+		row.appendChild(actions);
+
+		this.element = row;
 
 		return row;
 	}
@@ -81,4 +84,15 @@ class PasswordPair {
 		}
 		return hash;
 	}
+
+	show() {
+		this.element.classList.add('visible');
+		this.element.classList.remove('hidden');
+	}
+
+	hide() {
+		this.element.classList.remove('visible');
+		this.element.classList.add('hidden');
+	}
+
 }

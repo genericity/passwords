@@ -28,6 +28,14 @@ body {
 	height: 36px;
 }
 
+div.hidden, section.hidden {
+	display: none;
+}
+
+div.visible, section.visible {
+	display: block;
+}
+
 /* Setup */
 
 #app_wrap {
