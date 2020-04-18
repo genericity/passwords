@@ -108,13 +108,33 @@ nav ul {
 	font-size: 24px;
 }
 
+.top_search {
+	width: 100%;
+}
+
+.top_search .search_button {
+	background: #f9fbfc;
+	padding: 2px;
+	margin-top: 4px;
+	float: right;
+	color: #0c1c28;
+	cursor: pointer;
+}
+
 #search_bar {
 	padding: 6px;
 	border: none;
 	background: #f9fbfc;
-	width: calc(100% - 12px);
+	width: calc(100% - 48px);
 	line-height: 18px;
 	margin-top: 4px;
+}
+
+#search_bar::placeholder,
+#search_bar::-webkit-input-placeholder,
+#search_bar:-ms-input-placeholder,
+#search_bar::-ms-input-placeholder {
+    color:#f00;
 }
 
 .card::-webkit-scrollbar-track
@@ -169,8 +189,9 @@ h3.type_header:after {
 }
 
 .item_row {
-	padding: 16px 0 0 0;
+	margin: 8px 0 0 0;
 	display: block;
+	padding: 4px 0 4px 4px;
 }
 
 .hash_dot {
@@ -179,7 +200,7 @@ h3.type_header:after {
 	border-radius: 50%;
 	display: inline-block;
 	float: left;
-	margin: 8px 12px 8px 0;
+	margin: 4px 12px 8px 4px;
 }
 
 .dark_orange {
@@ -194,12 +215,17 @@ h3.type_header:after {
 	background-color: #413a92;
 }
 
+.light_purple {
+	background-color: #5951ba;
+}
+
 .dark_blue {
-	background-color: #3c3eb7;
+	background-color: #0d3856;
 }
 
 .item_content {
 	display: inline-block;
+	cursor: auto;
 }
 
 .username {
@@ -243,6 +269,15 @@ h3.type_header:after {
 .actions {
 	display: inline-block;
 	float: right;
+}
+
+.item_row:hover {
+	cursor: pointer;
+	background: #e0e8ec;
+}
+
+.item_row:hover .material-icons{
+	color: #afb5c8;
 }
 
 .further_actions.material-icons {
