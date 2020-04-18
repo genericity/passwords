@@ -5,4 +5,4 @@ import eel
 eel.init('web')
 
 # Start the application on the loading screen page.
-eel.start('load.html', size=(600, 800))
+eel.start('passwords.html', size=(600, 800))
