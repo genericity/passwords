@@ -38,7 +38,7 @@ body {
 	clear: both;
 }
 
-#app_wrap .card {
+#app_wrap #card {
 	width: calc(100% - 160px);
 	margin: 12px 0 12px 12px;
 	position: relative;
@@ -95,9 +95,9 @@ nav ul {
 	color: #fb8c87;
 }
 
-/* Card*/
+/*#card*/
 
-#app_wrap .card h2 {
+#app_wrap #card h2 {
 	text-align: left;
 	font-family: 'Noto Sans', Roboto;
 	font-weight: 600;
@@ -137,20 +137,20 @@ nav ul {
     color:#f00;
 }
 
-.card::-webkit-scrollbar-track
+#card::-webkit-scrollbar-track
 {
     background-color: #d3dfe6;
     border-radius: 10px;
 }
 
-.card::-webkit-scrollbar
+#card::-webkit-scrollbar
 {
     width: 10px;
     background-color: #d3dfe6;
     border-radius: 10px;
 }
 
-.card::-webkit-scrollbar-thumb
+#card::-webkit-scrollbar-thumb
 {
     border-radius: 10px;
     background: #afb5c8;

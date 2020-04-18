@@ -8,6 +8,14 @@ class PasswordPair {
 		this.password_obj;
 	}
 
+	getUsername(decrypt = false) {
+		return this.encrypted.username;
+	}
+
+	getPassword(decrypt = false) {
+		return this.encrypted.password;
+	}
+
 	makeObject () {
 		let row = document.createElement('div');
 		row.className = "item_row";
@@ -24,20 +32,24 @@ class PasswordPair {
 		username.className = "username editable";
 		let username_text = document.createTextNode(this.getUsername(false));
 		username.appendChild(username_text);
-		row.appendChild(username);
+		item_content.appendChild(username);
 
 		// Password.
 		let password = document.createElement('div');
 		password.className = "password spoiler editable";
 		let password_text = document.createTextNode(this.getPassword(true));
 		password.appendChild(password_text);
-		row.appendChild(password);
+		item_content.appendChild(password);
+
+		row.appendChild(item_content);
 
 		// Chevron.
 		let actions = document.createElement('div');
 		actions.className = "actions";
 		let further_actions = document.createElement('div');
 		further_actions.className = "further_actions material-icons";
+		let chevron_text = document.createTextNode("chevron_right");
+		further_actions.appendChild(chevron_text);
 		actions.appendChild(further_actions);
 		row.appendChild(actions)
 
@@ -52,7 +64,7 @@ class PasswordPair {
 		// the length of the colour array.
 
 		let last_digit = Math.abs(hash % 10);
-		let colour = colours[last_digit % length(colours)];
+		let colour = colours[last_digit % colours.length];
 
 		return colour;
 	}
@@ -65,7 +77,7 @@ class PasswordPair {
 		let i = 0;
 		let l = str.length;
 		while (i < l) {
-			hash = ((hash << 5) - hash + this.charCodeAt(i++)) << 0;
+			hash = ((hash << 5) - hash + str.charCodeAt(i++)) << 0;
 		}
 		return hash;
 	}
