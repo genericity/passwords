@@ -34,26 +34,28 @@ class PasswordManager {
 }
 
 // Wrap in an anonymous function to clean up the global namespace.
-(() => {
+(async () => {
 	let card = document.getElementById("card");
 	let content_wrapper = card.getElementsByTagName("content")[0];
 
-	let section_names = ["Email", "Misc", "Steam", "reddit", "Work"]
-	let sections = [];
-	for (let j = 0; j < 5; j++) {
-		let objects = [];
-		for (let i = 0; i < 5; i++) {
-			let pair = new PasswordPair("hello" + Math.round(Math.random() * 10) + "@gmail.com", "examplePassword");
-			objects.push(pair);
+	data = await eel.get_data("test")();
+
+	let content = [];
+	for (let s of data) {
+		let items = [];
+		for (let i of s['items']) {
+			let pair = new PasswordPair(i['name'], i['secret']);
+			items.push(pair);
 		}
-		let section = new Section(section_names[j], objects);
+		let section = new Section(s['name'], items);
+		
 		let section_obj = section.makeObject();
 		content_wrapper.appendChild(section_obj);
 
-		sections.push(section);
+		content.push(section);
 	}
 
-	let password_manager = new PasswordManager(sections, content_wrapper);
+	let password_manager = new PasswordManager(content, content_wrapper);
 
 	let search_box = document.getElementById("search_bar");
 	search_box.addEventListener("change", (e) => {password_manager.searchFor(e.srcElement.value)});

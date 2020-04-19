@@ -1,6 +1,5 @@
 import io
 import json
-from item import Item, Section
 
 class FileParser:
 	def __init__(self, filename):
@@ -11,8 +10,8 @@ class FileParser:
 
 	def get_raw_content(self):
 		if self.raw_content is None:
-			with open(filename, 'r') as f:
-				self.raw_content = file.readlines()
+			with open(self.filename, 'r') as f:
+				self.raw_content = f.read()
 
 		return self.raw_content
 
@@ -22,15 +21,7 @@ class FileParser:
 
 		self.serialized = json.loads(raw_content)
 
-		content = []
-		for s in self.serialized:
-			items = [Item(i.name, i.secret) for i in s.items]
-			section = Section(s.name, items)
-			content.append(section)
-
-		self.content = content
-
-		return content
+		return self.serialized
 
 	def write(self, serialized_data):
 		with open(filename, 'w') as f:
