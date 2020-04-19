@@ -136,13 +136,19 @@ nav ul {
 	width: calc(100% - 48px);
 	line-height: 18px;
 	margin-top: 4px;
+	color: #b0c3cf;
+}
+
+#search_bar:focus {
+	color: #9098b3;
+	outline: 3px solid #c9cdda;
 }
 
 #search_bar::placeholder,
 #search_bar::-webkit-input-placeholder,
 #search_bar:-ms-input-placeholder,
 #search_bar::-ms-input-placeholder {
-    color:#f00;
+	color: #b0c3cf;
 }
 
 #card::-webkit-scrollbar-track
