@@ -70,11 +70,21 @@ div.visible, section.visible {
 
 #app_wrap nav h1 {
 	color: #fff;
-	margin: 24px 32px;
+	margin: 24px 16px 24px 32px;
 	font-family: 'Noto Sans', Roboto;
 	font-weight: bold;
 	text-transform: uppercase;
-	letter-spacing: 2.5px;
+	letter-spacing: 2px;
+}
+
+#app_wrap nav h1::before {
+	height: 10px;
+	width: 10px;
+	/*border-radius: 50%;*/
+	display: inline-block;
+	float: left;
+	background: #fa6963;
+	content: "";
 }
 
 #app_wrap nav {
@@ -85,10 +95,16 @@ div.visible, section.visible {
 #app_wrap nav ul li a {
 	display: block;
 	float: left;
-	padding: 16px 24px;
+	padding: 16px 0 16px 24px;
 	color: #8eacbe;
 	font: 16px 'Noto Sans', Roboto;
 	border-left: 3px solid transparent;
+}
+
+#app_wrap nav ul li a .unsaved_changes_icon {
+	height: 0.5em;
+	width: 0.5em;
+	margin: 0.1em 0 0.1em 0.5em;
 }
 
 nav ul {
@@ -103,7 +119,29 @@ nav ul {
 	color: #fb8c87;
 }
 
-/*#card*/
+/* Editing */
+
+.unsaved_changes_icon {
+	border-radius: 50%;
+	display: inline-block;
+	background: #fb8c87;
+	height: 0.7em;
+	width: 0.7em;
+	margin-bottom: 0.25em;
+	margin-left: 0.5em;
+}
+
+/* Card */
+
+.row {
+	display: block;
+	position: relative;
+	z-index: 0;
+}
+
+#card > .row {
+	margin: 24px 0 12px 0;
+}
 
 #app_wrap #card h2 {
 	text-align: left;
@@ -111,9 +149,35 @@ nav ul {
 	font-weight: 600;
 	text-transform: uppercase;
 	color: #0c1c28;
-	margin: 24px 0 12px 0;
 	letter-spacing: 1px;
 	font-size: 24px;
+	display: inline-block;
+}
+
+.edit_button {
+	float: right;
+	cursor: pointer;
+}
+
+.button {
+	position: relative;
+}
+
+.button::before {
+	content: "";
+	border-radius: 50%;
+	height: 1.5em;
+	width: 1.5em;
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: -25%;
+	left: -25%;
+	transition: background 0.2s;
+}
+
+.button:hover::before {
+	background: #d3dfe6;
 }
 
 .top_search {

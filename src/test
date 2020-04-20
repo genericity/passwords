@@ -1,7 +1,0 @@
-[{
-	"name": "Email",
-	"items": [{
-		"name": "hello1@gmail.com",
-		"secret": "examplePassword"
-	}]
-}]

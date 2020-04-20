@@ -38,7 +38,7 @@ class PasswordManager {
 	let card = document.getElementById("card");
 	let content_wrapper = card.getElementsByTagName("content")[0];
 
-	data = await eel.get_data("test")();
+	data = await eel.get_data("test.json")();
 
 	let content = [];
 	for (let s of data) {
@@ -48,7 +48,7 @@ class PasswordManager {
 			items.push(pair);
 		}
 		let section = new Section(s['name'], items);
-		
+
 		let section_obj = section.makeObject();
 		content_wrapper.appendChild(section_obj);
 
