@@ -25,6 +25,12 @@ class Section {
 		return section;
 	}
 
+	makeEditable(editable) {
+		for (let obj of this.objects) {
+			obj.makeEditable(editable);
+		}
+	}
+
 	getName() {
 		return this.name;
 	}

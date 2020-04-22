@@ -5,7 +5,9 @@ class PasswordPair {
 			'password': encrypted_password
 		};
 		this.username_obj;
+		this.username_input;
 		this.password_obj;
+		this.password_input;
 		this.element;
 	}
 
@@ -34,6 +36,12 @@ class PasswordPair {
 		let username_text = document.createTextNode(this.getUsername(false));
 		username.appendChild(username_text);
 		item_content.appendChild(username);
+		this.username_obj = username;
+
+		this.username_input = document.createElement('input');
+		this.username_input.type = "text";
+		this.username_input.className = "username_input hidden";
+		item_content.appendChild(this.username_input);
 
 		// Password.
 		let password = document.createElement('div');
@@ -41,6 +49,12 @@ class PasswordPair {
 		let password_text = document.createTextNode(this.getPassword(true));
 		password.appendChild(password_text);
 		item_content.appendChild(password);
+		this.password_obj = password;
+
+		this.password_input = document.createElement('input');
+		this.password_input.type = "text";
+		this.password_input.className = "password_input spoiler hidden";
+		item_content.appendChild(this.password_input);
 
 		row.appendChild(item_content);
 
@@ -93,6 +107,38 @@ class PasswordPair {
 	hide() {
 		this.element.classList.remove('visible');
 		this.element.classList.add('hidden');
+	}
+
+	makeEditable(editable) {
+		if (editable) {
+			this.username_obj.classList.remove('visible');
+			this.username_obj.classList.add('hidden');
+			this.password_obj.classList.remove('visible');
+			this.password_obj.classList.add('hidden');
+			this.username_input.classList.add('visible');
+			this.username_input.classList.remove('hidden');
+			this.password_input.classList.add('visible');
+			this.password_input.classList.remove('hidden');
+
+			// Update text.
+			this.username_input.value = this.username_obj.innerHTML;
+			// TODO - Decrypt first
+			this.password_obj.value = this.password_obj.innerHTML;
+		} else {
+			this.username_obj.classList.add('visible');
+			this.username_obj.classList.remove('hidden');
+			this.password_obj.classList.add('visible');
+			this.password_obj.classList.remove('hidden');
+			this.username_input.classList.remove('visible');
+			this.username_input.classList.add('hidden');
+			this.password_input.classList.remove('visible');
+			this.password_input.classList.add('hidden');
+
+			// Update text.
+			this.username_obj.innerHTML = this.username_input.value;
+			// TODO - Encrypt first
+			this.password_obj.innerHTML = this.password_obj.value;
+		}
 	}
 
 }
