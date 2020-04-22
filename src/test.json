@@ -1,0 +1,15 @@
+[{
+	"name": "Email",
+	"items": [{
+		"name": "test@gmail.com",
+		"secret": "examplePassword"
+	},
+	{
+		"name": "abc@gmail.com",
+		"secret": "examplePassword"
+	},
+	{
+		"name": "def@gmail.com",
+		"secret": "examplePassword"
+	}]
+}]
