@@ -123,7 +123,7 @@ class PasswordPair {
 			// Update text.
 			this.username_input.value = this.username_obj.innerHTML;
 			// TODO - Decrypt first
-			this.password_obj.value = this.password_obj.innerHTML;
+			this.password_input.value = this.password_obj.innerHTML;
 		} else {
 			this.username_obj.classList.add('visible');
 			this.username_obj.classList.remove('hidden');

@@ -151,8 +151,8 @@ nav ul {
 	font-size: 14px;
 }
 
-.username_input:focus {
-	outline: 3px solid #c9cdda;
+.username_input:focus, .password_input:focus {
+	outline: 2px solid #c9cdda;
 }
 
 /* Card */
